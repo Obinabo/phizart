@@ -49,10 +49,10 @@ useEffect(() =>{
       <div className={`mobile-nav ${isActive ? 'active' : ''}`}>
         <FaXmark className="cancel" onClick={toggleNav} />
         <div className='section'>
-          <Link to="graphics-pack">Graphics Pack</Link>
-          <Link to="portfolio">Portfolio</Link>
-          <Link to="expertise">Expertise</Link>
-          <Link to="about">About Me</Link>
+          <Link to="/graphics-pack">Graphics Pack</Link>
+          <Link to="/portfolio">Portfolio</Link>
+          <Link to="/expertise">Expertise</Link>
+          <Link to="/about">About Me</Link>
           <Button btnclass="button click-button" to="/contact" text="Contact Me" />
         </div>
       </div>
@@ -64,8 +64,8 @@ useEffect(() =>{
 export const Inverted = () => {
   return (
     <div className="inverted">
-      <Link to="https://facebook.com/" className="inverted-text">Facebook</Link>
-      <Link to="https://instagram.com/" className="inverted-text">Instagram</Link>
+      <Link to="https://facebook.com/phizarts7" className="inverted-text">Facebook</Link>
+      <Link to="https://instagram.com/phizarts7" className="inverted-text">Instagram</Link>
       <Link to="https://linkedin.com/" className="inverted-text">LinkedIn</Link>
     </div>
   )
@@ -107,9 +107,9 @@ export const Footer = () => {
             <Link to="/"><img src={logoWhite} className="logo" alt="Logo" /></Link>
           </div>
           <div className="right">
-            <Link to="https://facebook.com/"><FaFacebook style={iconStyle}/></Link> 
+            <Link to="https://facebook.com/phizarts7"><FaFacebook style={iconStyle}/></Link> 
             <Link to="https://x.com/"><FaXTwitter style={iconStyle}/></Link>
-            <Link to="https://instagram.com/"><FaInstagram style={iconStyle}/></Link>
+            <Link to="https://instagram.com/phizarts7"><FaInstagram style={iconStyle}/></Link>
             <Link to="https://linkedin.com/"><FaLinkedin style={iconStyle}/></Link>
           </div>
         </div>
