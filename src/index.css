@@ -188,6 +188,12 @@ button{
   color: var(--white-color);
   text-transform: underline;
 }
+.mobile-nav{
+  display: none;
+}
+.navbutton{
+  display: none
+}
 .slider-cont{
   margin: -350px auto 10px auto;
   position: relative;
@@ -351,7 +357,35 @@ ul{
 }
 li{
   margin: 10px auto;
+}
+.portfolio-cont{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: row wrap;
+}
+.portfolio-cont .portfolio{
+  flex: 1 350px;
+  align-self: stretch;
+  padding: 20px;
   text-align: left;
+}
+.portfolio-cont .portfolio h2{
+  font-size: 2em;
+  margin: 10px 0px;
+  color: var(--light-green-color);
+}
+.portfolio-cont .portfolio p{
+  font-size: 0.9em;
+  margin: 5px 0px;
+  color: var(--black-color);
+}
+.portfolio-cont img{
+  flex: 1 200px;
+  align-self: stretch; 
+  height: 300px;
+  width: 100%;
 }
 .double-cont{
   width: 100%;
@@ -541,6 +575,63 @@ input:focus, select:focus, textarea:focus{
       padding: 10px;
   } 
   .text-cont{
+    width: 100%;
+  }
+  .portfolio,img{
+    width: 100%;
+  }
+  .mobile-nav{
+    position: fixed;
+    display: block;
+    padding: 50px 20px;
+    width: 90%;
+    height: 100%;
+    top: 300px;
+    right: -100%;
+    background: var(--dark-green-color);
+    color: var(--white-color);
+    text-align: left;
+    z-index: 3;
+    transition: ease-in-out;
+  }
+  .mobile-nav .section{
+    margin: 10% auto;
+  }
+  .mobile-nav a{
+    margin: 10px;
+    display: block;
+    font-size: 1.5em;
+    color: var(--white-color);
+  }
+  .navbutton{
+    display: block;
+    font-size: 1.5em;
+    color: var(--white-color);
+    align-self: center;
+  }
+  .mobile-nav .cancel{
+    right: 20px;
+    top: 20px;
+    font-size: 2.5em;
+    color: var(--white-color);
+    background: var(--light-bg);
+    border-radius: 50%;
+    padding: 7px;
+  }
+  .mobile-nav .button{
+    width: 100%;
+    margin: 20px auto;
+    font-size: 1.5em;
+  }
+  .mobile-nav.active{
+    top: 0px;
+    right: 0px;
+    transition: 1s ease-in;
+  }
+  .portfolio-cont img{
+    flex: 1 350px;
+    align-self: stretch; 
+    height: 350px;
     width: 100%;
   }
 }

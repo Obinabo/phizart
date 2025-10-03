@@ -8,11 +8,17 @@ import { FaFacebook } from 'react-icons/fa'
 import { FaXTwitter } from 'react-icons/fa6'
 import { FaInstagram } from 'react-icons/fa'
 import { FaLinkedin } from 'react-icons/fa'
+import { RxHamburgerMenu } from 'react-icons/rx' //Import Nav button icon
+import { FaXmark } from 'react-icons/fa6'
 
 //Header Component
 export const Header = () => {
 const [scrolled, setScrolled] = useState(false)
+const [isActive, setIsActive] = useState(false)
 
+const toggleNav = () =>{
+  setIsActive(prev => !prev)
+}
 useEffect(() =>{
   const handleScroll = () => {
     const isScrolled = window.scrollY >= 100;
@@ -26,18 +32,31 @@ useEffect(() =>{
   }
 }, [scrolled])
   return (
-    <div className={`header ${scrolled ? 'scrolled' : ''}`}>
-      <div className="left">
-        <Link to="/"><img src={logo} alt="Logo" className="logo" /></Link>
+    <>
+      <div className={`header ${scrolled ? 'scrolled' : ''}`}>
+        <div className="left">
+          <Link to="/"><img src={logo} alt="Logo" className="logo" /></Link>
+        </div>
+        <div className="right">
+          <NavLink to="/graphics-pack" className="navlink">Graphics Pack</NavLink>
+          <NavLink to="/portfolio" className="navlink">Portfolio</NavLink>
+          <NavLink to="/expertise" className="navlink">Expertise</NavLink>
+          <NavLink to="/about" className="navlink">About Me</NavLink>
+          <span className="navlink"><Button text="Contact Me" btnclass="click-button" to="/contact"/></span>
+          <span className="navbutton" onClick={toggleNav}><RxHamburgerMenu /></span>
+        </div>
       </div>
-      <div className="right">
-        <NavLink to="/graphics-pack" className="navlink">Graphics Pack</NavLink>
-        <NavLink to="/portfolio" className="navlink">Portfolio</NavLink>
-        <NavLink to="/expertise" className="navlink">Expertise</NavLink>
-        <NavLink to="/about" className="navlink">About Me</NavLink>
-        <Button text="Contact Me" btnclass="click-button" to="/contact"/>
+      <div className={`mobile-nav ${isActive ? 'active' : ''}`}>
+        <FaXmark className="cancel" onClick={toggleNav} />
+        <div className='section'>
+          <Link to="graphics-pack">Graphics Pack</Link>
+          <Link to="portfolio">Portfolio</Link>
+          <Link to="expertise">Expertise</Link>
+          <Link to="about">About Me</Link>
+          <Button btnclass="button click-button" to="/contact" text="Contact Me" />
+        </div>
       </div>
-    </div>
+    </>
   )
 }
 
@@ -63,13 +82,13 @@ export const HeroBanner = ({children, bgImage}) => {
 } 
 
 //Section Component
-export const Section = ({children, bgImage, bgColor}) => {
-  return(
+export const Section = ({children, bgImage, bgColor}) =>
+  (
     <div className="section" style={{background: bgImage ? `url(${bgImage})` : bgColor || "transparent"}}>
       {children}
     </div>
   )
-} 
+
 
 //Footer Component
 export const Footer = () => {
