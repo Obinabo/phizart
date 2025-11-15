@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
-import { Button } from '../components/Button'
+import axios from "axios"
+//import { Button } from '../components/Button'
 export const ContactForm = () => {
     const [formData, setFormData] = useState({
       name: '',
@@ -7,15 +8,24 @@ export const ContactForm = () => {
       subject: '',
       message: '',
     })
-
+    const [error, setError] = useState("")
     const handleInput = (e) => {
-      const {name, value} = e.target
-      setFormData((prev)=>
-        (
-          {...prev, [name]: value}
-        )
+      //const {name, value} = e.target
+      setFormData(
+        {...formData, [e.target.name]: e.target.value}
+        // (
+        //   {...prev, [name]: value}
+        // )
       )} 
 
+      const handleSubmit = async(e) => {
+        try{
+          const res = await axios.post("http://localhost:4000/api/contact", formData)
+          
+        }catch(err){
+          setError(err.response?.error || "Login Failed")
+        }
+      }
   return (
     <div className="contact-form">
         <form>

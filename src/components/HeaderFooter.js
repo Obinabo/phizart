@@ -89,7 +89,6 @@ export const Section = ({children, bgImage, bgColor}) =>
     </div>
   )
 
-
 //Footer Component
 export const Footer = () => {
   const iconStyle = {
@@ -135,6 +134,9 @@ export const Footer = () => {
         <div className="bottom">
             <p style={{fontSize: "0.5em", textAlign: "center"}}>Copyright  2025 PhizArts. All Rights Reserved. Powered by Walcode</p>
         </div>
+
+        <script type="text/javascript" id="hs-script-loader" async defer src="//js-eu1.hs-scripts.com/147268189.js"></script>
+
     </div>
   )
 }
