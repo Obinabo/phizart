@@ -135,8 +135,6 @@ export const Footer = () => {
             <p style={{fontSize: "0.5em", textAlign: "center"}}>Copyright  2025 PhizArts. All Rights Reserved. Powered by Walcode</p>
         </div>
 
-        <script type="text/javascript" id="hs-script-loader" async defer src="//js-eu1.hs-scripts.com/147268189.js"></script>
-
     </div>
   )
 }
